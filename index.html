@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ruusware - AI-Powered Software Solutions</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+        #video-slideshow .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        #video-slideshow video {
+            width: 100%;
+            display: none;
+        }
+        #video-slideshow video.active {
+            display: block;
+        }
+        #gallery .gallery-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        #gallery img {
+            width: 100%;
+            display: none;
+        }
+        #gallery img.active {
+            display: block;
+        }
+        h1, h2 {
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ruusware</h1>
+    </header>
+
+    <!-- Video Slideshow Section -->
+    <section id="video-slideshow">
+        <div class="video-container">
+            <video class="slide" src="videos/ruusware_ai_demo.mp4" autoplay muted loop></video>
+            <video class="slide" src="videos/ruusware_product_showcase.mp4" autoplay muted loop></video>
+            <video class="slide" src="videos/ruusware_team_culture.mp4" autoplay muted loop></video>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>ruusware is a cutting-edge tech company specializing in AI-powered software solutions. We leverage artificial intelligence to create innovative products that revolutionize industries.</p>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision">
+        <h2>Our Vision</h2>
+        <p>At ruusware, we envision a future where AI-driven predictive and corrective maintenance transforms industries, enhancing efficiency and reducing downtime across various sectors.</p>
+    </section>
+
+    <!-- Picture Gallery Section -->
+    <section id="gallery">
+        <div class="gallery-container">
+            <img class="gallery-slide" src="images/ruusware_ai_interface.jpg" alt="ruusware AI Interface">
+            <img class="gallery-slide" src="images/ruusware_team_collaboration.jpg" alt="ruusware Team Collaboration">
+            <img class="gallery-slide" src="images/ruusware_office.jpg" alt="ruusware Office">
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Video Slideshow
+            let videoIndex = 0;
+            const videos = document.querySelectorAll('#video-slideshow .slide');
+            function showVideo() {
+                videos.forEach((video, index) => {
+                    video.classList.remove('active');
+                    if (index === videoIndex) {
+                        video.classList.add('active');
+                    }
+                });
+                videoIndex = (videoIndex + 1) % videos.length;
+            }
+            setInterval(showVideo, 5000); // Change video every 5 seconds
+
+            // Picture Slideshow
+            let picIndex = 0;
+            const pictures = document.querySelectorAll('#gallery .gallery-slide');
+            function showPicture() {
+                pictures.forEach((picture, index) => {
+                    picture.classList.remove('active');
+                    if (index === picIndex) {
+                        picture.classList.add('active');
+                    }
+                });
+                picIndex = (picIndex + 1) % pictures.length;
+            }
+            setInterval(showPicture, 3000); // Change picture every 3 seconds
+        });
+    </script>
+</body>
+</html>
+
